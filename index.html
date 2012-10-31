@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>jSlider</title>
+	
+	<!-- bin/jquery.slider.min.css -->
+	<link rel="stylesheet" href="css/jslider.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.blue.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.plastic.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.round.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.round.plastic.css" type="text/css">
+  <!-- end -->
+
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	
+	<!-- bin/jquery.slider.min.js -->
+	<script type="text/javascript" src="js/jshashtable-2.1_src.js"></script>
+	<script type="text/javascript" src="js/jquery.numberformatter-1.2.3.js"></script>
+	<script type="text/javascript" src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="js/draggable-0.1.js"></script>
+	<script type="text/javascript" src="js/jquery.slider.js"></script>
+  <!-- end -->
+	
+	<style type="text/css" media="screen">
+	 .layout-slider { margin: 0 auto 20px; width: 50%; }
+	 .layout-slider-settings { font-size: 20px; padding-bottom: 10px; }
+	</style>
+
+</head>
+<body>
+  
+    <div class="layout-slider">
+      <input id="SliderSingle" type="slider" name="price" value="1" />
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      function calc( value ) { 
+        hour = value + 7;
+        day = (hour < 24) ? 29 : 30;
+        am_pm = ((hour % 24) >= 12) ? "pm" : "am";
+        hour %= 12;
+        hour = (hour == 0) ? 12 : hour;
+
+        return "October " + day + ", " + hour + am_pm;
+      }
+      function change( value ) { $("img").attr("src", "images/sandy_" + value + ".png"); }
+      jQuery("#SliderSingle").slider({ from: 1, to: 40, step: 1, round: 1, skin: "round", calculate: calc, onstatechange: change });
+    </script>
+
+    <img src="images/sandy_1.png"></img>
+</body>
+</html>
