@@ -32,6 +32,8 @@ d = ddply(d, .(day, hour, longitude, latitude, which), summarise, count = length
 # STEP 2. Plot the tweets on a map. #
 #####################################
 
+# Map code partially taken from https://github.com/hadley/ggplot2/wiki/Flying-over-the-usa.
+
 # Plots three maps, one for each type of tweet, showing where people
 # just lost power, still had no power, or just got their power turned on,
 # for the specified day and hour.
